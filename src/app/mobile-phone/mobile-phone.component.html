@@ -1,1 +1,13 @@
-<p>mobile-phone works!</p>
+<hr/>
+<table >
+    <tr>
+        <td><b>ProductName</b></td>
+        <td><b>ProductCost</b></td>
+    </tr>
+    <tr *ngFor="let item of getAllMobiles()">
+        <td>{{item.productName}}</td>
+        <td>{{item.productCost}}</td>
+        <td> <button (click)="addToCart(item)">Add To Cart</button> </td>  
+    </tr>
+</table>
+

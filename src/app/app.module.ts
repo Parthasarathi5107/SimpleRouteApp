@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
+import { ChildComponent } from './child/child.component';
 
 const appRoutes:Routes=[
 
@@ -36,7 +37,8 @@ const appRoutes:Routes=[
     CartComponent,
     LoginComponent,
     ErrorPageComponent,
-    AdminComponent
+    AdminComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

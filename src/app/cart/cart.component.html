@@ -1,1 +1,13 @@
-<p>cart works!</p>
+<table >
+    <tr>
+        <td>ProductName</td>
+        <td>ProductCost</td>
+        <td>ProductCategory</td>
+    </tr>
+    <tr *ngFor="let item of getAllProducts()">
+        <td>{{item.productName}}</td>
+        <td>{{item.productCost}}</td>
+        <td>{{item.productCategory}}</td>
+
+    </tr>
+</table>
