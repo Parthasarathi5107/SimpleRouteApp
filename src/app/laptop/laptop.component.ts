@@ -10,6 +10,8 @@ import { ProductService } from '../product.service';
 })
 export class LaptopComponent implements OnInit {
 
+  cart:number=0;
+
   __productService:ProductService;
   constructor(ps:ProductService,private cartService:CartserviceService) {
     this.__productService=ps;
@@ -25,5 +27,8 @@ export class LaptopComponent implements OnInit {
 
   addToCart(product:ProductDetails){
     this.cartService.addToCart(product);
+    this.cart++;
   }
+
+  
 }

@@ -1,4 +1,4 @@
-import { LaptopComponent } from './laptop/laptop.component';
+
 import { Injectable } from '@angular/core';
 import { ProductDetails } from './product-details';
 

@@ -1,13 +1,17 @@
 
 <div class="mainDiv">
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" #productForm="ngForm" novalidate>
   <div class="form-group">
     <label >Product Name</label>
-    <input type="text" class="form-control" id="pname1"  name="productName" [(ngModel)]="productModel.productName">
+    <input type="text" class="form-control" id="pname1"  name="productName" [(ngModel)]="productModel.productName"  #name="ngModel" required>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="errorMsg">
+            Product Name cannot be left blank
+          </div>
   </div>
   <div class="form-group">
     <label >Product Cost</label>
-    <input type="text" class="form-control" id="pcost" name="productCost" [(ngModel)]="productModel.productCost">
+    <input type="text" class="form-control" id="pcost" name="productCost" [(ngModel)]="productModel.productCost" required pattern="[0-9]+" #cost="ngModel">
+    <div *ngIf="cost.invalid == true">not valid</div>
   </div>
   <div class="form-check">
     <label >Product Category</label>
@@ -17,6 +21,6 @@
       <option>MobilePhone</option>
     </select>
   </div>
-  <button type="submit" >Submit</button>
+  <button type="submit" [disabled]="productForm.form.invalid">Submit</button>
 </form>
 </div>
