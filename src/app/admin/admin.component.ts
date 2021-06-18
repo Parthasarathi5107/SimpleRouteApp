@@ -11,20 +11,48 @@ import { ProductDetails } from '../product-details';
 })
 export class AdminComponent implements OnInit {
 
- __productService:ProductService;
-  constructor(ps:ProductService) { 
-    this.__productService=ps;
-  }
- 
-  productModel:ProductDetails = new ProductDetails('',0,'');
-  
+  id!:number;
+  productDetails:ProductDetails = new ProductDetails(0,"",0,0,"");
+  updateDetails: ProductDetails = new  ProductDetails(0,"",0,0,"");
+  updatedProduct:ProductDetails = new ProductDetails(0,"",0,0,"");
+  constructor(private productService:ProductService) {}
+
   ngOnInit(): void {
   }
-
+ 
   onSubmit()
   {
-    console.log(this.productModel.productName);
-    this.__productService.addProduct(this.productModel);
+    console.log(this.productDetails);
+    this.doSaveTOServer();
   }
 
+  doSaveTOServer()
+  {
+    this.productService.createLaptop(this.productDetails).subscribe(
+      data=>{
+          console.log(" Data Saved !!! "+data);
+      },
+      error => {
+        console.log(error);
+        
+      }
+     );
+  }
+
+  doUpdate(){
+    console.log(this.productDetails);
+    this.doUpdateOnServer();
+  }
+
+  doUpdateOnServer()
+  {
+    
+    this.productService.updateLaptop(this.id)
+        .subscribe(data=>{
+          this.updateDetails = data;
+          console.log(" Data Updted !!! "+this.updateDetails.productId);
+        },
+        error=>console.log(error)
+        )
+  }
 }

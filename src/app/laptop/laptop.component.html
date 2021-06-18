@@ -2,12 +2,18 @@
 <hr/>
 <table >
     <tr>
+        <td><b>ProductId</b></td>
         <td><b>ProductName</b></td>
         <td><b>ProductCost</b></td>
+        <td><b>ProductRating</b></td>
+        <td><b>ProductCategory</b></td>
     </tr>
-    <tr *ngFor="let item of getAllLaptops()">
-        <td>{{item.productName}}</td>
+    <tr *ngFor="let item of laptops">
+        <td>{{item.productId}}</td>
+        <td><a routerLink="/view/{{item.productName}}">{{item.productName}}</a></td>
         <td>{{item.productCost}}</td>
+        <td>{{item.productRating}}</td>
+        <td>{{item.productCategory}}</td>
         <td> <button (click)="addToCart(item)" >Add To Cart</button> </td>  
     </tr>
 </table>

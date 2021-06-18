@@ -1,12 +1,21 @@
 export class ProductDetails {
-productName:string;
-productCost:number;
-productCategory:string;
+    productId !:number;
+    productName !:string;
+    productCost !:number;
+    productRating !:number;
+    productCategory !:string;
 
-    constructor(productName:string,productCost:number,productCategory:string)
-    {
-        this.productName = productName;
-        this.productCost = productCost;
-        this.productCategory = productCategory;
-    }
+    constructor(productId:number,
+        productName:string,
+        productCost:number,
+        productRating:number,
+        productCategory:string){
+
+            this.productId=productId;
+            this.productName=productName;
+            this.productCost=productCost;
+            this.productRating = productRating;
+            this.productCategory=productCategory;
+            
+        }
 }

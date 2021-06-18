@@ -9,7 +9,7 @@ import { CartserviceService } from './cartservice.service';
 })
 export class AppComponent {
   title = 'SimpleRouteApp';
-  name:string="Ramesh";
+  name:string="Partha";
 
   inputCartNumber:number=0;
   cartService:CartserviceService;

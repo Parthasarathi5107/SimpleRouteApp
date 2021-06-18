@@ -4,7 +4,7 @@
         <td><b>ProductName</b></td>
         <td><b>ProductCost</b></td>
     </tr>
-    <tr *ngFor="let item of getAllCameras()">
+    <tr *ngFor="let item of cameras">
         <td>{{item.productName}}</td>
         <td>{{item.productCost}}</td>
         <td> <button (click)="addToCart(item)" >Add To Cart</button> </td>  
